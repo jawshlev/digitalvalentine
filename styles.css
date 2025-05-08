@@ -1,0 +1,327 @@
+/* Base styles */
+:root {
+    --primary-color: #3b82f6;
+    --primary-light: rgba(59, 130, 246, 0.1);
+    --text-color: #1f2937;
+    --text-muted: #6b7280;
+    --bg-color: #ffffff;
+    --bg-alt: #f9fafb;
+    --border-color: #e5e7eb;
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --radius: 0.5rem;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-color);
+    line-height: 1.5;
+    background-color: var(--bg-color);
+  }
+  
+  .container {
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Button styles */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  .btn:hover {
+    background-color: var(--bg-alt);
+  }
+  
+  .btn svg {
+    flex-shrink: 0;
+  }
+  
+  /* Section styles */
+  section {
+    padding: 3rem 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    section {
+      padding: 3rem 2rem;
+    }
+  }
+  
+  .hero {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: right;
+    padding-top: 3rem;
+    padding-right: 12rem;
+  }
+  .hero, h1{
+    font-size: 10vh;
+  }
+  @media (min-width: 768px) {
+    .hero, h1 {
+      font-size: 13vh
+    }
+  }
+  
+  /* Canvas section */
+  .canvas-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .canvas-container {
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+  
+  .canvas-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .p5-canvas-container {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-alt);
+    min-height: 500px;
+  }
+  .centered-section {
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+  /* Tabbed section */
+  .tabbed-section {
+    background-color: var(--bg-alt);
+  }
+  
+  .tabs {
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+  
+  .tab-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .tab-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  .tab-btn:hover {
+    background-color: var(--bg-alt);
+  }
+  
+  .tab-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+  }
+  
+  .tab-content {
+    display: none;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+  
+  .prose {
+    max-width: none;
+  }
+  
+  /* Controls grid */
+  .controls-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .controls-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .control-card {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+  }
+  
+  .control-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--primary-light);
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .control-desc {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+  
+  .control-text {
+    font-size: 0.875rem;
+  }
+  
+  /* Artist section */
+  .artist-section {
+    background-color: var(--bg-color);
+    margin-left: 11rem;
+  }
+  
+  .artist-container {
+    max-width: 64rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .artist-container {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+  
+  .artist-image {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 9999px;
+    overflow: hidden;
+    background-color: var(--bg-alt);
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    .artist-image {
+      margin: 0;
+    }
+  }
+  
+  .artist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .artist-info {
+    flex: 1;
+  }
+  
+  .artist-title {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--bg-alt);
+    border-radius: 9999px;
+    color: var(--text-color);
+    transition: background-color 0.2s;
+  }
+  
+  .social-links a:hover {
+    background-color: var(--border-color);
+  }
+  
+  /* Footer */
+  footer {
+    padding: 2rem 1rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+  
+  footer p {
+    margin-bottom: 0.5rem;
+  }
+  
